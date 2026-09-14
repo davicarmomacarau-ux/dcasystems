@@ -1,0 +1,105 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DCA Systems</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">D</div>
+        <div>
+          <div class="brand-title">DCA Systems</div>
+          <div class="brand-subtitle">Legacy Banking Platform</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#">Dashboard</a>
+        <a href="#">Leads</a>
+        <a href="#">Legacy Parser</a>
+        <a href="#">Health</a>
+      </nav>
+      <div class="status-chip" id="statusChip">ONLINE</div>
+    </header>
+
+    <main class="dashboard">
+      <section class="card left-panel">
+        <div class="kicker">CRM / Interesse</div>
+        <h1 class="title">Modernizacao<br><span>de legado bancario</span></h1>
+        <p class="intro">
+          Capture clientes, transforme registros legados e suscite o proximo ciclo de relacionamento digital.
+        </p>
+
+        <section class="metrics">
+          <div class="metric">
+            <div class="metric-label">Leads ativos</div>
+            <div class="metric-value" id="totalLeads">0</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Status</div>
+            <div class="metric-value" id="statusSystem">online</div>
+          </div>
+        </section>
+
+        <section class="form-block">
+          <form id="leadForm">
+            <div class="form-grid">
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="Digite o e-mail do cliente" required />
+              <button id="registerLead" type="submit">Registrar</button>
+            </div>
+          </form>
+
+          <div class="form-grid" style="margin-top: 14px;">
+            <textarea id="legacyText" placeholder="Cole o texto legado para converter em payload JSON"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button class="button" id="convertBtn">Migrar amostra</button>
+            <button class="button secondary" id="sampleBtn">Carregar texto</button>
+            <button class="button" id="refreshBtn">Atualizar</button>
+            <button class="button danger" id="clearBtn">Limpar</button>
+            <button class="button" id="exportBtn">Exportar CSV</button>
+          </div>
+        </section>
+
+        <div class="message" id="message"></div>
+      </section>
+
+      <aside class="card right-panel">
+        <div class="kicker">Painel operacional</div>
+        <div class="panel-title">Fluxo de legado</div>
+        <p class="panel-copy">
+          O pipeline da DCA Systems interpreta arquivos legados, valida o cliente e prepara a transicao de dados para o relacionamento digital.
+        </p>
+
+        <section class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="timeline-text">Coleta de interesse</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="timeline-text">Identificacao do cliente</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="timeline-text">Payload legado</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="timeline-text">Modernizacao do relacionamento</span>
+          </div>
+        </section>
+
+        <section class="lead-list" id="leadList"></section>
+      </aside>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
